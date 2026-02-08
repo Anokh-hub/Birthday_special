@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 600px;
+    color: #fff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+}
+
+.message {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    min-height: 50px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 100px;
+    height: 120px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.15);
+}
+
+button {
+    padding: 12px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #ff3f6c;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff1744;
+}
+
+.hidden {
+    display: none;
+}
+
+#surpriseText {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    animation: fadeIn 1.5s ease;
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Falling hearts */
+.hearts::before {
+    content: "💖 💕 ❤️ 💗 💓 💘";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: hearts 10s linear infinite;
+    font-size: 24px;
+}
+
+@keyframes hearts {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+/* MAIN SURPRISE CONTAINER */
+.surprise-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 80vw;              /* BIG width */
+    max-width: 900px;
+    height: 60vh;             /* BIG height */
+
+    display: flex;
+    justify-content: space-around; /* spread divs */
+    align-items: center;
+
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border-radius: 25px;
+
+    z-index: 1000;
+}
+
+/* PHOTO DIV */
+.photo-div {
+    width: 45%;       /* BIG child divs */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* IMAGE */
+.photo-div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
