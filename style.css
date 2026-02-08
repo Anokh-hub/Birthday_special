@@ -12,41 +12,46 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding: 15px;
+    overflow-y: auto;
 }
 
 .container {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
-    padding: 30px;
-    border-radius: 20px;
     text-align: center;
-    max-width: 600px;
+    
     color: #fff;
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
     z-index: 2;
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 18px;
 }
 
 h1 {
-    font-size: 2.3rem;
+    
     margin-bottom: 15px;
+    font-size: 1.6rem;
 }
 
 .message {
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-bottom: 20px;
     min-height: 50px;
 }
 
 .gallery {
-    display: flex;
+    display: grid;
     justify-content: center;
-    gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .gallery img {
-    width: 100px;
-    height: 120px;
+    width: 100%;
+    height: 140px;
     border-radius: 15px;
     object-fit: cover;
     transition: transform 0.3s;
@@ -57,7 +62,8 @@ h1 {
 }
 
 button {
-    padding: 12px 22px;
+    padding: 14px 22px;
+    width:100%;
     border: none;
     border-radius: 25px;
     background: #ff3f6c;
@@ -76,7 +82,7 @@ button:hover {
 
 #surpriseText {
     margin-top: 20px;
-    font-size: 1.2rem;
+    font-size: 1rem;
     animation: fadeIn 1.5s ease;
 }
 
@@ -107,15 +113,17 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    width: 80vw;              /* BIG width */
+    width: 95vw;              /* BIG width */
     max-width: 900px;
-    height: 60vh;             /* BIG height */
+    height: auto;  
+    flex-direction: column; /* BIG height */
 
     display: flex;
     justify-content: space-around; /* spread divs */
     align-items: center;
+    gap:15px;
 
-    padding: 30px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(12px);
     border-radius: 25px;
@@ -125,8 +133,8 @@ button:hover {
 
 /* PHOTO DIV */
 .photo-div {
-    width: 45%;       /* BIG child divs */
-    height: 100%;
+    width: 100%;       /* BIG child divs */
+    height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,7 +145,9 @@ button:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
 }
+
+
 
